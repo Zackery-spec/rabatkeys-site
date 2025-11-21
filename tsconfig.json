@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    // ----------------------------------------------------------------
+    // CRITICAL FIX: ADD THESE TWO LINES FOR ABSOLUTE PATHS
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/app/*": ["src/app/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/actions/*": ["src/actions/*"],
+      // Add other aliases (like @/hooks, @/ui) if you use them:
+      "@/hooks/*": ["src/hooks/*"],
+      "@/ui/*": ["src/ui/*"]
+    }
+    // ----------------------------------------------------------------
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

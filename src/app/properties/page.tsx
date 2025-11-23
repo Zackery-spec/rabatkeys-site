@@ -9,20 +9,29 @@ interface Property {
   currency: string;
 }
 
-// Function to fetch data from your local API route
 async function getProperties(): Promise<Property[]> {
-  // Use the simplest possible relative path: /api/properties
-  // Next.js should handle resolving this to http://localhost:3000/api/properties (Dev)
-  // OR https://rabakeys.online/api/properties (Prod)
-  const res = await fetch('/api/properties', { cache: 'no-store' }); 
+  // Use a base URL that works for both environments:
+  // 1. If VERCEL_URL is set (i.e., we are on Vercel), use the live domain.
+  // 2. Otherwise (i.e., we are on localhost), use http://localhost:3000.
+  // NOTE: We rely on the VERCEL_URL being automatically available in Server Components.
+
+  const baseUrl = process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : 'http://localhost:3000';
+    
+  const apiUrl = `${baseUrl}/api/properties`;
+
+  // The fetch call now uses a guaranteed, parsable absolute URL in both environments
+  const res = await fetch(apiUrl, { cache: 'no-store' }); 
 
   if (!res.ok) {
-    // This will catch the 'Failed to parse URL' error if it persists
-    throw new Error('Failed to fetch property data. Check Vercel logs for fetch URL details.');
+    console.error(`Fetch failed for URL: ${apiUrl}`); 
+    throw new Error(`Failed to fetch property data from ${apiUrl}`);
   }
 
   return res.json();
 }
+// ... rest of the file
 
 export default async function PropertiesPage() {
   let properties: Property[] = [];

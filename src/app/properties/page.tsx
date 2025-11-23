@@ -13,11 +13,11 @@ interface Property {
 async function getProperties(): Promise<Property[]> {
   // Use the full URL if fetching externally, but for local API routes,
   // Next.js correctly handles the relative path during server rendering.
-  const res = await fetch('http://localhost:3000/api/properties', {
-    // This cache option ensures Next.js fetches data on every request,
-    // which is useful during development.
-    cache: 'no-store', 
-  });
+ // Old, broken code (if using absolute path):
+// const res = await fetch('http://localhost:3000/api/properties');
+
+// New, fixed code using relative path:
+const res = await fetch('/api/properties', { cache: 'no-store' }); // Next.js understands this relative path
 
   if (!res.ok) {
     throw new Error('Failed to fetch property data');

@@ -11,16 +11,14 @@ interface Property {
 
 // Function to fetch data from your local API route
 async function getProperties(): Promise<Property[]> {
-  // Use the full URL if fetching externally, but for local API routes,
-  // Next.js correctly handles the relative path during server rendering.
- // Old, broken code (if using absolute path):
-// const res = await fetch('http://localhost:3000/api/properties');
-
-// New, fixed code using relative path:
-const res = await fetch('./api/properties', { cache: 'no-store' }); // Next.js understands this relative path
+  // Use the simplest possible relative path: /api/properties
+  // Next.js should handle resolving this to http://localhost:3000/api/properties (Dev)
+  // OR https://rabakeys.online/api/properties (Prod)
+  const res = await fetch('/api/properties', { cache: 'no-store' }); 
 
   if (!res.ok) {
-    throw new Error('Failed to fetch property data');
+    // This will catch the 'Failed to parse URL' error if it persists
+    throw new Error('Failed to fetch property data. Check Vercel logs for fetch URL details.');
   }
 
   return res.json();

@@ -17,7 +17,7 @@ async function getProperties(): Promise<Property[]> {
 // const res = await fetch('http://localhost:3000/api/properties');
 
 // New, fixed code using relative path:
-const res = await fetch('/api/properties', { cache: 'no-store' }); // Next.js understands this relative path
+const res = await fetch('./api/properties', { cache: 'no-store' }); // Next.js understands this relative path
 
   if (!res.ok) {
     throw new Error('Failed to fetch property data');

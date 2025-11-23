@@ -16,7 +16,7 @@ async function getProperties(): Promise<Property[]> {
   // NOTE: We rely on the VERCEL_URL being automatically available in Server Components.
 
   const baseUrl = process.env.VERCEL_URL 
-    ? `https://${process.env.VERCEL_URL}` 
+    ? `https://rabatkey.online` 
     : 'http://localhost:3000';
     
   const apiUrl = `${baseUrl}/api/properties`;

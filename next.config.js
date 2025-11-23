@@ -14,10 +14,17 @@ const nextConfig = {
       // Add other domains here if needed, e.g., 'cdn.shopify.com'
     ],
   },
-  // If you are using a Next.js version that uses the older 'domains' array:
-  // images: {
-  //   domains: ['images.unsplash.com'],
-  // },
+
+  // FIX FOR VERCEL FETCH ISSUE: Add the rewrites function directly inside the nextConfig object
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: '/api/:path*', // Maps /api/properties to the API route handler
+      },
+    ];
+  },
 };
 
+// Export the single combined configuration object
 module.exports = nextConfig;

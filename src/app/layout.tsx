@@ -9,50 +9,48 @@ import Footer from "@/components/global/Footer";
 import { GoogleAnalytics } from '@next/third-parties/google' 
 
 const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
 });
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
 });
 
 // ----------------------------------------------------------------------
 // Global Metadata (Updated for better SEO)
 // ----------------------------------------------------------------------
 export const metadata: Metadata = {
-  title: "RabatKeys | Premium Property Management & Rentals in Rabat, Morocco",
-  description: "RabatKeys offers professional property management, maximizing rental income for owners in Hay Riad and central Rabat. Local expertise, global standards.",
-  keywords: ["Rabat property management", "Morocco rentals", "property", "short-term rentals Rabat"],
-  authors: [{ name: "RabatKeys Team" }],
+  title: "RabatKeys | Premium Property Management & Rentals in Rabat, Morocco",
+  description: "RabatKeys offers professional property management, maximizing rental income for owners in Hay Riad and central Rabat. Local expertise, global standards.",
+  keywords: ["Rabat property management", "Morocco rentals", "property", "short-term rentals Rabat"],
+  authors: [{ name: "RabatKeys Team" }],
 };
 // ----------------------------------------------------------------------
 
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-  return (
-    // Add font variables to the html tag so they are available globally via CSS
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className={inter.className}>
-        {/* 1. Global Navigation */}
-        <Navbar /> 
-        
-        {/* 2. Page Content */}
-        {/* Added min-h-screen to ensure the footer stays at the bottom */}
-        <main className="pt-24 min-h-screen"> 
-          {children} 
-        </main>
-        
-        {/* 3. Global Footer */}
-        <Footer />
+  return (
+    // Add font variables to the html tag so they are available globally via CSS
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <body className={inter.className}>
+        {/* 1. Global Navigation */}
+        <Navbar /> 
+        
+        {/* 2. Page Content */}
+        <main className="pt-24 min-h-screen"> 
+          {children} 
+        </main>
+        
+        {/* 3. Global Footer */}
+        <Footer />
 
-       
-      </body>
-      {/* ⬅️ NEW GOOGLE ANALYTICS COMPONENT */}
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-    </html>
-  );
+        {/* ⬅️ FIX: Component moved inside the <body> tag */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> 
+      </body>
+    </html>
+  );
 }

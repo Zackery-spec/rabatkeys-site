@@ -30,7 +30,20 @@ export const metadata: Metadata = {
   authors: [{ name: "RabatKeys Team" }],
 };
 // ----------------------------------------------------------------------
-
+// ⬅️ NEW HELPER COMPONENT (can be placed anywhere outside of the RootLayout function)
+const GaWrapper = () => {
+    const gaId = process.env.NEXT_PUBLIC_GA_ID;
+    
+    // Only render the component if the ID is definitely defined
+    if (!gaId) {
+        // Optional: Add a console warning during development/build
+       console.warn('NEXT_PUBLIC_GA_ID is missing! Analytics disabled.'); 
+        return null; 
+    }
+    
+    // Now TypeScript knows gaId is a string here
+    return <GoogleAnalytics gaId={gaId} />;
+}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (

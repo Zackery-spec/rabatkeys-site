@@ -26,7 +26,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "RabatKeys | Premium Property Management & Rentals in Rabat, Morocco",
   description: "RabatKeys offers professional property management, maximizing rental income for owners in Hay Riad and central Rabat. Local expertise, global standards.",
-  keywords: ["Rabat property management", "Morocco rentals", "Hay Riad property", "short-term rentals Rabat"],
+  keywords: ["Rabat property management", "Morocco rentals", "property", "short-term rentals Rabat"],
   authors: [{ name: "RabatKeys Team" }],
 };
 // ----------------------------------------------------------------------

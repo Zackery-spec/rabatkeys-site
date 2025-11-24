@@ -5,23 +5,23 @@ import { Handshake, Star, MapPin, TrendingUp } from "lucide-react";
 // --- Data ---
 const teamMembers = [
   {
-    name: "Omar El Fassi",
-    role: "Founder & CEO",
+    name: "Nejmi Youssef",
+    role: "Co-Founder & CEO",
     bio: "Visionary leader combining Moroccan business acumen with global digital expertise.",
-    img: "https://i.pravatar.cc/150?img=60" // Placeholder
+    img: "/images/nejmi_youssef.jfif" // Placeholder
   },
   {
-    name: "Sofia Bensaid",
-    role: "Head of Hospitality",
-    bio: "Ensures every guest experience exceeds 5-star standards through local excellence.",
-    img: "https://i.pravatar.cc/150?img=49" // Placeholder
+    name: "Bouchaqour Zakaria",
+    role: "Co-Founder & CTO",
+    bio: "Tech innovator driving our platform's seamless user experience and operational efficiency.",
+    img: "/images/bouchaqour_zakaria.jfif" // Placeholder
   },
-  {
-    name: "Karim Zaki",
-    role: "Digital Strategy Architect",
-    bio: "Drives efficiency and revenue maximization using smart pricing and technology.",
-    img: "https://i.pravatar.cc/150?img=52" // Placeholder
-  },
+  //{
+   // name: "Karim Zaki",
+    //role: "Digital Strategy Architect",
+    //bio: "Drives efficiency and revenue maximization using smart pricing and technology.",
+    //img: "https://i.pravatar.cc/150?img=52" // Placeholder
+  //},
 ];
 
 const coreValues = [
@@ -93,7 +93,7 @@ export default function AboutUsPage() {
           <h2 className="font-serif text-4xl text-center text-rabat-navy mb-12">
             Meet the Executive Team
           </h2>
-          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto">
             {teamMembers.map((member, index) => (
               <div key={index} className="text-center">
                 <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 relative border-4 border-rabat-sand shadow-lg">

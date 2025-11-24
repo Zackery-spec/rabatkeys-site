@@ -10,7 +10,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 relative z-10">
           <h1 className="font-serif text-4xl md:text-5xl mb-4">Get in Touch</h1>
           <p className="text-rabat-sand text-lg max-w-xl mx-auto">
-            Ready to elevate your property’s potential? Our team in Hay Riad is ready to assist you.
+            Ready to elevate your property’s potential? Our team is ready to assist you.
           </p>
         </div>
         {/* Pattern Overlay */}

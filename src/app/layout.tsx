@@ -6,7 +6,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import Navbar from "@/components/global/Navbar"; 
 import Footer from "@/components/global/Footer";
 // ⬅️ CRITICAL: Import the Google Analytics component
-import GoogleAnalytics from "@/components/analytics/GoogleAnalytics"; 
+import { GoogleAnalytics } from '@next/third-parties/google' 
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -49,10 +49,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* 3. Global Footer */}
         <Footer />
 
-        {/* 4. Google Analytics (Loads before </body> for best performance) */}
-        {/* The GA script tags will be injected here */}
-        <GoogleAnalytics />
+       
       </body>
+      {/* ⬅️ NEW GOOGLE ANALYTICS COMPONENT */}
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
   );
 }

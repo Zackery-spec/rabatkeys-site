@@ -48,9 +48,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* 3. Global Footer */}
         <Footer />
 
-        {/* ⬅️ FIX: Component moved inside the <body> tag */}
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> 
-      </body>
-    </html>
+        {/* ⬅️ CRITICAL FIX: Add 'as string' to resolve TypeScript error */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} /> 
+      </body>
+    </html>
   );
 }

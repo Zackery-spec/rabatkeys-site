@@ -202,57 +202,6 @@ export default function Homepage() {
         {/* Pattern Overlay */}
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] mix-blend-multiply" />
       </section>
-
-      {/* --- FOOTER --- */}
-      <footer className="bg-slate-900 text-rabat-beige py-16 border-t border-slate-800">
-        <div className="container mx-auto px-6 grid md:grid-cols-3 gap-12">
-          
-          {/* Brand */}
-          <div>
-            <h3 className="font-serif text-2xl text-white mb-6">Rabat<span className="text-rabat-sand">Keys</span></h3>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Premium property management services combining local Moroccan expertise with international hospitality standards.
-            </p>
-            <div className="flex gap-4">
-              {/* Social Placeholders */}
-              <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-rabat-sand hover:bg-rabat-navy cursor-pointer transition">FR</div>
-              <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-rabat-sand hover:bg-rabat-navy cursor-pointer transition">AR</div>
-              <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-rabat-sand hover:bg-rabat-navy cursor-pointer transition">EN</div>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-bold text-white uppercase tracking-wider mb-6 text-sm">Company</h4>
-            <ul className="space-y-4 text-slate-300 text-sm">
-              <li className="hover:text-rabat-sand cursor-pointer transition">Our Services</li>
-              <li className="hover:text-rabat-sand cursor-pointer transition">About Us</li>
-              <li className="hover:text-rabat-sand cursor-pointer transition">Property Insights (Blog)</li>
-              <li className="hover:text-rabat-sand cursor-pointer transition">Contact</li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-bold text-white uppercase tracking-wider mb-6 text-sm">Contact Us</h4>
-            <ul className="space-y-4 text-slate-300 text-sm">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-rabat-sand shrink-0" />
-                <span>12 Avenue Annakhil, Hay Riad,<br/>Rabat, Morocco</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Key className="w-5 h-5 text-rabat-sand shrink-0" />
-                <span>+212 5 37 00 00 00</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-500 text-xs">
-          © {new Date().getFullYear()} RabatKeys. All rights reserved.
-        </div>
-      </footer>
-
     </main>
   );
 }

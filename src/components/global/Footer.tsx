@@ -1,16 +1,12 @@
-'use client'; // 1. CRITICAL: Makes this component interactive (Client Component)
+'use client';
 
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // 2. CRITICAL: Hook to get the current URL path
 import { MapPin, Key, Facebook, Instagram, Linkedin } from "lucide-react";
+// Import the Google Translate component we created
+import GoogleTranslate from "@/components/GoogleTranslate";
 
 export default function Footer() {
-  // Get the current path (e.g., '/en/about' or '/contact')
-  const pathname = usePathname();
-  
-  // Logic to strip the language prefix, ensuring the links go to the same page
-  // Regex: Finds '/en/', '/fr/', or '/ar/' at the start and replaces it with '/'
-  const pathWithoutLocale = pathname.replace(/^\/(en|fr|ar)(\/|$)/, '/');
+  // REMOVED: All the complex pathname and regex logic is gone.
 
   return (
     <footer className="bg-slate-900 text-rabat-beige py-16 border-t border-slate-800">
@@ -22,46 +18,18 @@ export default function Footer() {
           <p className="text-slate-400 text-sm leading-relaxed mb-6">
             Premium property management services blending local Moroccan expertise with international hospitality standards.
           </p>
-          <div className="flex gap-4">
-            {/* Multilingual Switcher: Now functional with Next.js i18n routing */}
-            
-            {/* French Link */}
-            <Link 
-              href={pathWithoutLocale} // Links to the current page path
-              locale="fr" // CRITICAL: Sets the locale for Next.js routing
-              aria-label="French language" 
-              className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center text-rabat-sand hover:bg-rabat-teal transition"
-            >
-              FR
-            </Link>
-            
-            {/* Arabic Link */}
-            <Link 
-              href={pathWithoutLocale} 
-              locale="ar" // CRITICAL: Sets the locale for Next.js routing
-              aria-label="Arabic language" 
-              className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center text-rabat-sand hover:bg-rabat-teal transition"
-            >
-              AR
-            </Link>
-            
-            {/* English Link */}
-            <Link 
-              href={pathWithoutLocale} 
-              locale="en" // CRITICAL: Sets the locale for Next.js routing
-              aria-label="English language" 
-              className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center text-rabat-sand hover:bg-rabat-teal transition"
-            >
-              EN
-            </Link>
+          
+          {/* REPLACED: The manual links are gone. The Widget is here. */}
+          <div className="mt-4">
+             <GoogleTranslate />
           </div>
+
         </div>
 
         {/* Column 2: Quick Links */}
         <div>
           <h4 className="font-bold text-white uppercase tracking-wider mb-6 text-sm">Company</h4>
           <ul className="space-y-3 text-slate-300 text-sm">
-            {/* NOTE: You should eventually adjust these links to handle the current locale */}
             <li><Link href="/services" className="hover:text-rabat-sand transition">Our Services</Link></li>
             <li><Link href="/about" className="hover:text-rabat-sand transition">About Us</Link></li>
             <li><Link href="/blog" className="hover:text-rabat-sand transition">Insights (Blog)</Link></li>

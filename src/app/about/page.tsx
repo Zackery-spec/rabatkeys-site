@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Nejmi Youssef",
     role: "Co-Founder & CEO",
     bio: "Visionary leader combining Moroccan business acumen with global digital expertise.",
-    img: "/images/nejmi_youssef.jfif" // Placeholder
+    img: "/images/nejmi_youssef.jpeg" // Placeholder
   },
   {
     name: "Bouchaqour Zakaria",

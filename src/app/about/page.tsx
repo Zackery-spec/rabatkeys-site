@@ -14,7 +14,7 @@ const teamMembers = [
     name: "Bouchaqour Zakaria",
     role: "Co-Founder & CTO",
     bio: "Tech innovator driving our platform's seamless user experience and operational efficiency.",
-    img: "/images/bouchaqour_zakaria.jfif" // Placeholder
+    img: "/images/zakaria_bouchaqour2.png" // Placeholder
   },
   //{
    // name: "Karim Zaki",

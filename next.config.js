@@ -14,6 +14,13 @@ const nextConfig = {
       // Add other domains here if needed, e.g., 'cdn.shopify.com'
     ],
   },
+  
+  // ⬅️ CRITICAL FIX: This explicitly ensures NEXT_PUBLIC_GA_ID is available to the client build
+  env: {
+    // This value will be hardcoded into the client-side bundle during the Vercel build
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+  },
+  
   // FIX FOR VERCEL FETCH ISSUE: Add the rewrites function directly inside the nextConfig object
   async rewrites() {
     return [

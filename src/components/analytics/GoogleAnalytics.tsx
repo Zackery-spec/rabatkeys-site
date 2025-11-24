@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Get your GA ID from the environment variables (.env.local)
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
-
+console.log('GA_ID at Build Time:', gaId);
 // Define the gtag function globally for TypeScript to recognize it
 declare global {
   interface Window {

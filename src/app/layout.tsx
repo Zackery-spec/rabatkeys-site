@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 // ----------------------------------------------------------------------
 // ⬅️ NEW HELPER COMPONENT (can be placed anywhere outside of the RootLayout function)
 const GaWrapper = () => {
-    const gaId = process.env.NEXT_PUBLIC_GA_ID;
+    const gaId = "5W31YTXENC"; //process.env.NEXT_PUBLIC_GA_ID;
     
     // Only render the component if the ID is definitely defined
     if (!gaId) {
